@@ -1,28 +1,28 @@
-from django.views.generic import View
-from django.shortcuts import redirect
+from django.http import JsonResponse
+from django.urls import reverse_lazy
+from django.views.generic import View, FormView
+from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.core.mail import send_mail, send_mass_mail
 
-class SendFormEmail(View):
+from account.forms import  ContactModelForm
 
-    def get(self, request):
 
-        # Get the form data
-        name = request.GET.get('name', None)
-        email = request.GET.get('email', None)
-        message = request.GET.get('message', None)
+def contact(request):
+    form = ContactModelForm()
+    # if request.method == 'POST':
+    #     form = ContactModelForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('contact')
+    if request.is_ajax():
+        form = ContactModelForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({
+                'message': 'success'
+            })
+    return render(request, 'index.html', {'form': form})
 
-        # Send Email
-        send_mail(
-            'Subject - Django Email Testing',
-            'Hello ' + name + ',\n' + message,
-            'sender@example.com',
-            [
-                email,
-            ]
-        )
-
-        # Redirect to same page after form submit
-        messages.success(request, ('Email sent successfully.'))
-        return redirect('home')
 
