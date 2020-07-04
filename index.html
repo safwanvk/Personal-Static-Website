@@ -4,7 +4,7 @@
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +27,13 @@
 	<!--// Meta tag Keywords -->
     
 	<!-- css files -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"  media="all" /> <!-- Style-CSS -->
-	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css"  media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 	
       <!--lightbox -->
-      <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+      <link rel="stylesheet" href="css/lightbox.css">
       <!-- lightbox -->
 
 	<!--web font-->
@@ -51,7 +51,7 @@
 			<!-- logo -->
 			<h1>
 				<a class="navbar-brand" href="index.html">
-				Zab <span>Studio</span>
+				Zab<span>Studio</span>
 				</a>
 			</h1>
 			<!-- //logo -->
@@ -122,7 +122,7 @@
 					<a href="#about"> Read More </a>
 				</div>
 				<div class="col-md-5 image_margin">
-					<!--<img src="{% static 'images/img1.png' %}" alt="" class="img-fluid" />-->
+					<!--<img src="images/img1.png" alt="" class="img-fluid" />-->
 				</div>
 			</div>
 		</div>
@@ -141,7 +141,7 @@
 				<a href="#contact"> GET IN TOUCH <!--<span class="fa ml-2 fa-download"></span> --> </a>	
 			</div>
 			<div class="col-lg-4 col-md-6 my-lg-0 my-5">
-				<img src="{% static 'images/img(4).png' %}" alt="" class="img-fluid" />
+				<img src="images/img(4).png" alt="" class="img-fluid" />
 			</div>
 			<div class="col-lg-4 bar-grids">
 				<div class="wthree_skills">
@@ -319,9 +319,9 @@
 		   </div>
 		   <div class="col-md-6 p-0 col-sm-6 col-12 pt-sm-0 pt-2 agileits_w3layouts_gallery_grid1 hover14 column">
 			  <div class="w3_agile_gallery_effect">
-				 <a href="{% static 'images/sendemail.png' %}" data-lightbox="example-set" data-title="Django Send Email.Mail is one of the essential tool in the Web Application..">
+				 <a href="images/sendemail.png" data-lightbox="example-set" data-title="Django Send Email.Mail is one of the essential tool in the Web Application..">
 					<figure>
-					   <img src="{% static 'images/sendemail.png' %}" alt=" " class="img-responsive" />
+					   <img src="images/sendemail.png" alt=" " class="img-responsive" />
 					</figure>
 				 </a>
 			  </div>
@@ -330,9 +330,9 @@
 		<div class="row gallery_grid-more">
 		   <div class="col-md-6 p-0 col-sm-6 col-12 pt-sm-0 pt-2 agileits_w3layouts_gallery_grid1 w3layouts_gallery_grid1 hover14 column">
 			  <div class="w3_agile_gallery_effect">
-				 <a href="{% static 'images/portfolio.png' %}" data-lightbox="example-set" data-title="simple yet modern Personal website">
+				 <a href="images/portfolio.png" data-lightbox="example-set" data-title="simple yet modern Personal website">
 					<figure>
-					   <img src="{% static 'images/portfolio.png' %}" alt=" " class="img-responsive" />
+					   <img src="images/portfolio.png" alt=" " class="img-responsive" />
 					</figure>
 				 </a>
 			  </div>
@@ -446,17 +446,7 @@
 			<div class="col-lg-7 mt-lg-0 mt-5 contact-right">
 				<h4 class="mb-4">Get In Touch</h4>
 				<form method="POST" action="" role="form" id="contact_form">
-					{% csrf_token %}
-					<div class="messages">
-                        {% if messages %}
-                        {% for message in messages %}
-                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
-                            {{ message }}
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                    </div>
-					<label><i class="fa mr-2 fa-user" aria-hidden="true"></i> Name</label>
+				   <label><i class="fa mr-2 fa-user" aria-hidden="true"></i> Name</label>
 					<input type="text" name="name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 					<div class="clearfix"></div>
 					<label><i class="fas mr-2 fa-envelope-open" aria-hidden="true"></i>Email</label>
@@ -492,7 +482,7 @@
 			</div>
 		</div>
 		<div class="copyright text-center">
-			<p>© 2020 Zab Studio. All Rights Reserved | Design by <a href="http://safwanvk.github.io/"> Safwan</a> </p>
+			<p>© 2020 Zabstudio. All Rights Reserved | Design by <a href="http://safwanvk.github.io/"> Safwan</a> </p>
 		</div>
 	</div>
 </footer>
@@ -500,17 +490,17 @@
 
 
 	<!-- js -->
-	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->	
 	
 	<!--  light box js -->
-	<script src="{% static 'js/lightbox-plus-jquery.min.js' %}"> </script>
+	<script src="js/lightbox-plus-jquery.min.js"> </script>
 	<!-- //light box js-->
 	<!-- for-Testimonials -->
 	<!-- required-js-files-->
-	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
-		<script src="{% static 'js/owl.carousel.js' %}"></script>
+	<link href="css/owl.carousel.css" rel="stylesheet">
+		<script src="js/owl.carousel.js"></script>
 			<script>
 		$(document).ready(function() {
 		  $("#owl-demo").owlCarousel({
@@ -528,9 +518,9 @@
 
 
 	<!-- start-smoth-scrolling -->
-	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -540,7 +530,7 @@
 		});
 	</script>
 	<!-- here stars scrolling icon -->
-	<script type="{% static 'text/javascript' %}">
+	<script type="text/javascript">
 		$(document).ready(function() {
 			/*
 				var defaults = {
@@ -562,28 +552,7 @@
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
         crossorigin="anonymous"></script>
 
-     <script>
-        const form = document.getElementById('form');
-        form.addEventListener("submit", submitHandler);
-
-        function submitHandler(e) {
-            e.preventDefault();
-            $.ajax({
-                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-                url         : '{% url 'contact' %}', // the url where we want to POST
-                data        : $('#form').serialize(), // our form data
-                dataType    : 'json', // what type of data do we expect back from the server
-                success     : successFunction
-            });
-        }
-
-        function successFunction(msg) {
-            if (msg.message === 'success') {
-               alert('Success!');
-               form.reset()
-            }
-        }
-     </script>
+  
 
 </body>
 </html>
